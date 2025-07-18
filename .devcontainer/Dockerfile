@@ -17,7 +17,10 @@ RUN apt-get update && apt-get install -y \
     php-xml \
     php-curl \
     php-mysqlnd \        # MySQL Native Driver
-    php-bcmath \         # BCMath extension for PHP
+    #php-bcmath \         # BCMath extension for PHP
+
+# Install PHP extensions
+RUN docker-php-ext-install bcmath
 
 # Install Composer globally
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
