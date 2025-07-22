@@ -12,12 +12,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     php-xml \
     php-curl \
     php-mysql \
-    && rm -rf /var/lib/apt/lists/*
+    #&& rm -rf /var/lib/apt/lists/*
 
 # Install Node.js 18.x and npm via NodeSource
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
  && apt-get install -y nodejs \
- && rm -rf /var/lib/apt/lists/*
+ #&& rm -rf /var/lib/apt/lists/*
 
 # Install Composer globally
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
